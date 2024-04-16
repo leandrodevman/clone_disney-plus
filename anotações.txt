@@ -1,0 +1,11 @@
+1° - Criar um repositório para controle de versões no github
+2° - Na pasta do projeto, digitar no terminal:	 npm init --yes (para responder as perguntas com sim)
+3° - Baixar as dependências do projeto:   sass, gulp-sass, gulp		(npm i --save-dev nome-da-dependencia)
+4° - Resgatar no package.json o script:     "build": "gulp",
+    Para testar, utilizar:      npm run build watch
+5° - Colocar no   .gitignore   as pastas:  dist, node_modules   
+6° - Criar e configurar gulpfile.js conforme dicas no arquivo
+7° - Fazer 1 commit através do terminal:    git commit -m "Setup do projeto"    ,em seguida:    "git push"
+8° - Minificar imagens,     npm i --save-dev gulp-imagemin@7.1.0
+9° - Criação de variáveis, mixins e classes
+10° - Importante usar nomenclaturas da metodologia BEM

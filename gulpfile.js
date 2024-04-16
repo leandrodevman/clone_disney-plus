@@ -2,6 +2,7 @@ const gulp = require('gulp');
 // importando o gulp
 const sass = require('gulp-sass')(require('sass'));
 // importando sass e o gulp-sass
+const imagemin = require('gulp-imagemin')
 
 function styles() {
     return gulp.src('./src/styles/*.scss')
@@ -12,7 +13,15 @@ function styles() {
         // pasta de destino dos arquivos comprimidos
 }
 
-exports.default = styles;
+function images() {
+    return gulp.src('./src/images/**/*')
+    // acessando os arquivos de imagens (/** para acessar as pastas e /* para os arquivos dentro delas)
+        .pipe(imagemin())
+        // é uma função
+        .pipe(gulp.dest('./dist/images'));
+        // pasta de destino dos arquivos comprimidos
+}
+exports.default = gulp.parallel(styles, images);   
 // função padrão para rodar os arquivos
 exports.watch = function() {
     gulp.watch('./src/styles/*.scss', gulp.parallel(styles));
